@@ -1,9 +1,11 @@
-export async function login({ username , password }){
-    return new Promise((resolve , reject) => {
+import React from 'react'
+
+export async function login({ username, password }) {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if(username === 'ramil' && password === 'ramil'){
+            if (username === 'ramil' && password === 'ramil') {
                 resolve()
-            }else{
+            } else {
                 reject()
             }
         }, 1000)
