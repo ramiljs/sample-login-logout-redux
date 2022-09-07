@@ -1,18 +1,18 @@
-import React, { useReducer } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import { login } from "./login";
-import { loginReducer , initialState } from './state';
+import React, { useReducer } from 'react'
+import 'bootstrap/dist/css/bootstrap.css'
+import { login } from './login'
+import { loginReducer, initialState } from './state'
 
-const App = () => {
-    const [state, dispatch] = useReducer(loginReducer, initialState);
-    const { username, password, Loading, error, LoggedIn } = state;
+function App() {
+    const [state, dispatch] = useReducer(loginReducer, initialState)
+    const { username, password, Loading, error, LoggedIn } = state
 
     const onSubmit = async e => {
         e.preventDefault();
         dispatch({ type: 'login' })
 
         try {
-            await login({ username , password });
+            await login({ username, password });
             dispatch({ type: 'success' })
 
         } catch (error) {
@@ -42,14 +42,14 @@ const App = () => {
                                 placeholder='username'
                                 className='form-control mb-2'
                                 value={username}
-                                onChange={e => dispatch({ type: 'field', field: 'username', value: e.target.value})}
+                                onChange={(e) => dispatch({ type: 'field', field: 'username', value: e.target.value})}
                             />
                             <input
                                 type="text"
                                 placeholder="password"
                                 className='form-control mb-4'
                                 value={password}
-                                onChange={e => dispatch({ type: 'field', field: 'password', value: e.target.value })}
+                                onChange={(e) => dispatch({ type: 'field', field: 'password', value: e.target.value })}
                             />
                             <button
                                 className='btn btn-primary'
@@ -62,7 +62,7 @@ const App = () => {
                     )}
             </div>
         </div>
-    );
+    )
 }
 
-export default App;
+export default App
