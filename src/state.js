@@ -1,8 +1,10 @@
+
+
 export const initialState = {
-  username: '',
-  password: '',
+  username: "",
+  password: "",
   Loading: false,
-  error: '',
+  error: "",
   LoggedIn: false
 }
 
@@ -18,7 +20,7 @@ export const loginReducer = (state, action) => {
       return {
         ...state,
         Loading: true,
-        error: ''
+        error: ""
       }
     }
     case 'success': {
@@ -32,21 +34,20 @@ export const loginReducer = (state, action) => {
         ...state,
         error: 'Incorrect username or password!',
         Loading: false,
-        username: '',
-        password: ''
+        username: "",
+        password: ""
       }
     }
     case 'logout': {
       return {
         ...state,
         LoggedIn: false,
-        username: '',
-        password: ''
+        username: "",
+        password: ""
       }
     }
 
     default:
       return state
-
   }
 }
