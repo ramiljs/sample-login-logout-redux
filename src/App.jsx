@@ -7,7 +7,7 @@ function App() {
     const [state, dispatch] = useReducer(loginReducer, initialState)
     const { username, password, Loading, error, LoggedIn } = state
 
-    const onSubmit = async e => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         dispatch({ type: 'login' })
 
