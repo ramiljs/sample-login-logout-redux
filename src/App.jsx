@@ -12,13 +12,10 @@ function App() {
         dispatch({ type: 'login' })
 
         try {
-            await login({ username, password });
+            await login({ username, password })
             dispatch({ type: 'success' })
-
         } catch (error) {
-            dispatch({ type: 'error' });
-
-
+            dispatch({ type: 'error' })
         }
     }
 
