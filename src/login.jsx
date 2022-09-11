@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export async function login({ username, password }) {
     return new Promise((resolve, reject) => {
@@ -10,4 +10,4 @@ export async function login({ username, password }) {
             }
         }, 1000)
     })
-}
+};
