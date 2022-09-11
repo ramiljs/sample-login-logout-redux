@@ -1,24 +1,23 @@
-import React, { useReducer } from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
-import { login } from './login'
-import { loginReducer, initialState } from './state'
+import React, { useReducer } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import { login } from './login';
+import { loginReducer, initialState } from './state';
 
 function App() {
-    const [state, dispatch] = useReducer(loginReducer, initialState)
-    const { username, password, Loading, error, LoggedIn } = state
+    const [state, dispatch] = useReducer(loginReducer, initialState);
+    const { username, password, Loading, error, LoggedIn } = state;
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        dispatch({ type: 'login' })
+        dispatch({ type: 'login' });
 
         try {
-            await login({ username, password })
-            dispatch({ type: 'success' })
+            await login({ username, password });
+            dispatch({ type: 'success' });
         } catch (error) {
-            dispatch({ type: 'error' })
+            dispatch({ type: 'error' });
         }
     }
-
 
     return (
         <div className='container'>
@@ -62,4 +61,4 @@ function App() {
     )
 }
 
-export default App
+export default App;
