@@ -1,7 +1,7 @@
-import React, { useReducer } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import { login } from './login';
-import { loginReducer, initialState } from './state';
+import React, { useReducer } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import { login } from "./login";
+import { loginReducer, initialState } from "./state";
 
 function App() {
     const [state, dispatch] = useReducer(loginReducer, initialState);
@@ -42,7 +42,7 @@ function App() {
                             />
                             <input
                                 type="text"
-                                placeholder="password"
+                                placeholder='password'
                                 className='form-control mb-4'
                                 value={password}
                                 onChange={(e) => dispatch({ type: 'field', field: 'password', value: e.target.value })}
